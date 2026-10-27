@@ -3,7 +3,7 @@
 **Atividade 08 – Consumindo o Back-End no Front-End – CRUD**
 
 **Professor:** Vitor Lima Santana  
-**Aluno(a):** Yuri Saito Mena  
+**Aluno(a):** Matheus Oliveira Nogueira  
 **Disciplina:** Programação Back-End
 
 ## 1. Objetivo
@@ -130,25 +130,25 @@ Adicione capturas de tela demonstrando:
 
 **Imagem 1 – Tela de listagem**
 
-![Imagem1](./imagens/image1.png)
+![Imagem1](./imagens/imagem1.png)
 
 **Imagem 2 – Formulário de cadastro**
 
-![Imagem2](./imagens/image2.png)
+![Imagem2](./imagens/imagem2.png)
 
 **Imagem 3 – Cadastro funcionando**
 
-![Imagem3](./imagens/image3.png)
+![Imagem3](./imagens/imagem3.png)
 
 **Imagem 4 – Registro inserido no banco de dados**
 
-![Imagem4](./imagens/image4.png)
+![Imagem4](./imagens/imagem4.png)
 
 ## 8. Repositórios
 
-**Back-End (Fork):** https://github.com/abacaki/ProjetoFullStack.git
+**Back-End (Fork):** https://github.com/matheusonogueira-cloud/ProjetoFullStack
 
-**Front-End:** https://github.com/abacaki/FrontEndProjetoFullStack.git
+**Front-End:** https://github.com/matheusonogueira-cloud/FrontENdProjetoFullStack
 
 ## 9. Conclusão do aluno
 
@@ -185,7 +185,7 @@ Essa atividade foi muito importante para eu conseguir entender na prática como 
 
 **Professor responsável:** Vitor Lima Santana
 
-**Desenvolvido por:** Yuri Saito Mena
+**Desenvolvido por:** Matheus Oliveira Nogueira
 
 **Atividade 08 – Desenvolvimento Web e Consumo de APIs REST**"# FrontEndProjetoFullStack" 
 "# FrontEndProjetoFullStack" 
