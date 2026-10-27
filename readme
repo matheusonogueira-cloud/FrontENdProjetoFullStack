@@ -1,0 +1,192 @@
+# Front-End – Sistema de Gestão de Pessoas
+
+**Atividade 08 – Consumindo o Back-End no Front-End – CRUD**
+
+**Professor:** Vitor Lima Santana  
+**Aluno(a):** Yuri Saito Mena  
+**Disciplina:** Programação Back-End
+
+## 1. Objetivo
+
+Desenvolver uma aplicação Front-End utilizando HTML, CSS e JavaScript para consumir uma API REST desenvolvida em Node.js, Express e MySQL/MariaDB.
+
+A atividade tem como foco implementar o cadastro de pessoas utilizando o método HTTP **POST**, a função `fetch()` e o tratamento de erros com `async/await` e `try/catch`.
+
+## 2. Tecnologias utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Fetch API
+- Async/Await
+- Try/Catch
+- Node.js e Express (Back-End)
+- MySQL/MariaDB (Banco de dados)
+
+## 3. Estrutura do projeto
+
+```text
+frontend-gestao-pessoas/
+│
+├── index.html
+├── cadastro.html
+├── editar.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── listar.js
+│   ├── cadastro.js
+│   └── editar.js
+│
+└── README.md
+```
+
+## 4. Funcionalidades
+
+O sistema possui as seguintes operações:
+
+| Método | Rota | Funcionalidade |
+|---|---|---|
+| GET | /pessoas | Listar pessoas |
+| GET | /pessoas/:id | Consultar pessoa |
+| POST | /pessoas | Cadastrar pessoa |
+| PUT | /pessoas/:id | Atualizar pessoa |
+| DELETE | /pessoas/:id | Excluir pessoa |
+
+## 5. Implementação do POST
+
+O aluno deverá desenvolver o arquivo `js/cadastro.js`, responsável por capturar os dados do formulário HTML e enviá-los para a API.
+
+A implementação deverá utilizar:
+
+- `addEventListener("submit", ...)`
+- `preventDefault()`
+- `async/await`
+- `try/catch`
+- `fetch()`
+- `method: "POST"`
+- `JSON.stringify()`
+- Verificação de `resposta.ok`
+
+### Exemplo da estrutura de requisição
+
+```javascript
+const resposta = await fetch(
+  "http://localhost:3000/pessoas",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      nome,
+      idade
+    })
+  }
+);
+```
+
+O código deverá estar dentro de uma função assíncrona, com tratamento de erros utilizando `try/catch`.
+
+O aluno também deverá validar os campos nome e idade antes de enviar os dados.
+
+## 6. Como executar
+
+### Back-End
+
+1. Realizar o Fork do repositório original disponibilizado pelo professor.
+2. Clonar o repositório.
+3. Instalar as dependências:
+
+```bash
+npm install
+```
+
+4. Configurar a conexão com o banco de dados.
+5. Iniciar a API:
+
+```bash
+npm start
+```
+
+A API estará disponível em:
+
+`http://localhost:3000`
+
+### Front-End
+
+1. Abrir o projeto no Visual Studio Code.
+2. Verificar se o Back-End está funcionando.
+3. Executar `index.html` com o Live Server.
+4. Acessar a página de cadastro.
+5. Cadastrar uma pessoa.
+6. Verificar se os dados foram armazenados no banco de dados.
+
+## 7. Evidências
+
+Adicione capturas de tela demonstrando:
+
+**Imagem 1 – Tela de listagem**
+
+![Imagem1](./imagens/image1.png)
+
+**Imagem 2 – Formulário de cadastro**
+
+![Imagem2](./imagens/image2.png)
+
+**Imagem 3 – Cadastro funcionando**
+
+![Imagem3](./imagens/image3.png)
+
+**Imagem 4 – Registro inserido no banco de dados**
+
+![Imagem4](./imagens/image4.png)
+
+## 8. Repositórios
+
+**Back-End (Fork):** https://github.com/abacaki/ProjetoFullStack.git
+
+**Front-End:** https://github.com/abacaki/FrontEndProjetoFullStack.git
+
+## 9. Conclusão do aluno
+
+Explique com suas palavras:
+
+- Como funciona a comunicação entre o Front-End e o Back-End?
+
+O Front-End e o Back-End se conversam através de requisições e respostas usando o protocolo HTTP. O Front-End é a parte da tela que o cliente vê e interage, então quando ele preenche o formulário e clica no botão de cadastrar, o navegador envia esses dados em formato JSON para o servidor.
+O Back-End recebe esse pedido, processa a informação, faz as validações, salva no banco de dados e devolve uma resposta dizendo se deu tudo certo ou se teve algum erro para o Front saber o que mostrar na tela.
+  
+- Qual é a finalidade do método POST?
+
+A finalidade do método POST é enviar dados do Front-End para o servidor quando se quer criar um registro novo no banco de dados. Na parte do cadastro que eu fiz, usei o POST no fetch para pegar as informações digitadas nos campos de nome e idade e mandar essas informações dentro do corpo da requisição para o Back-End salvar a nova pessoa.
+  
+- Por que utilizamos `async/await` e `try/catch`?
+
+Eu usei o async/await e o try/catch para conseguir trabalhar com requisições assíncronas e evitar que a tela travasse:
+
+async/await: Como a resposta do servidor não é instantânea, o async avisa que a função vai demorar um pouco e o await faz o código esperar o retorno da API antes de ir para o próximo passo. Isso evita tentar redirecionar a página sem os dados estarem salvos.
+
+try/catch: Funciona para tratar os erros. O código tenta fazer a requisição no bloco try e, se o servidor estiver fora do ar ou der qualquer problema, ele pula para o catch para mostrar uma mensagem de erro na tela sem quebrar a aplicação.
+
+- Quais dificuldades você encontrou durante a atividade?
+
+Assistindo à explicação na aula, eu estava entendendo tudo tranquilamente, mas quando fui fazer a parte do cadastro, eu não sabia por onde começar. Antes eu tinha o apoio do professor e, apesar de estar entendendo a lógica, eu não estava fazendo algo totalmente sozinho. Minha principal dificuldade foi conectar a lógica no início, então o que me ajudou foi voltar nos códigos realizados antes na aula e olhar com mais calma para entender como cada parte funcionava. Depois que analisei as outras partes com mais atenção e peguei a ideia, o resto do desenvolvimento fluiu super bem e consegui fazer tudo funcionar.
+
+- Conclusão
+
+Essa atividade foi muito importante para eu conseguir entender na prática como funciona a integração entre o Front-End, o Back-End e o Banco de Dados. Ao trabalhar com as funções de listar, cadastrar, editar e excluir deu pra ver claramente como a API conecta todas essas partes do sistema. As informações digitadas no HTML são capturadas pelo JavaScript que envia a requisição para o servidor em Node.js com Express e tudo termina salvo ou alterado no banco de dados MySQL. Acompanhar todo esse caminho dos dados junto com o uso do async/await e do try/catch para tratar os erros me deu uma noção muito mais clara e completa de como uma aplicação web funciona em geral.
+
+---
+
+## Créditos
+
+**Professor responsável:** Vitor Lima Santana
+
+**Desenvolvido por:** Yuri Saito Mena
+
+**Atividade 08 – Desenvolvimento Web e Consumo de APIs REST**"# FrontEndProjetoFullStack" 
+"# FrontEndProjetoFullStack" 
+"# FrontEndProjetoFullStack" 
